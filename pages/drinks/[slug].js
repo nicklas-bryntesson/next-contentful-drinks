@@ -29,12 +29,12 @@ export const getStaticPaths = async () => {
 }
 
 export async function getStaticProps({ params }) {
-    const items = await client.getEntries({
+    const { items } = await client.getEntries({
         content_type: 'drinks',
         'fields.slug': params.slug,
     })
 
-    if(!items.length) {
+    if( ! items.length ) {
         return {
             redirect: {
                 destination: '/',
@@ -52,9 +52,7 @@ export async function getStaticProps({ params }) {
 export default function RecipeDetails( { drink } ) {
 
     if (!drink) {
-
         return <Skeleton />
-    
     }
 
     const { featuredImage, title, ingredients, method } = drink.fields
