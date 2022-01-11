@@ -2,7 +2,7 @@
 
 A Next.js & Contentful project.
 
-I will host this thing on Vercel and update this file with links with url to demo site.
+Link to visit demo site at Vercel [Drinks App](https://next-contentful-drinks.vercel.app/).
 
 
 ## Roadmap
