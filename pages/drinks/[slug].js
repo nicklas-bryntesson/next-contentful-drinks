@@ -29,7 +29,7 @@ export const getStaticPaths = async () => {
 }
 
 export async function getStaticProps({ params }) {
-    const res = await client.getEntries({
+    const items = await client.getEntries({
         content_type: 'drinks',
         'fields.slug': params.slug,
     })
@@ -44,7 +44,7 @@ export async function getStaticProps({ params }) {
     }
 
     return {
-        props: { drink: res.items[0] },
+        props: { drink: items[0] },
         revalidate: 10,
     }
 }
