@@ -15,7 +15,6 @@ export async function getStaticProps() {
       drinks: res.items,
     }
   }
-
 }
 
 export default function Recipes({ drinks }) {
@@ -26,6 +25,18 @@ export default function Recipes({ drinks }) {
       { drinks.map( drink => (
         <DrinkCard key={ drink.sys.id} drink={drink} />
       ))}
+        <style jsx>
+          {`
+            .drinks-list {
+              display: grid;
+              grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+              grid-gap: 1rem;
+              list-style: none;
+              padding: 0;
+              margin: 1rem;
+            }
+          `}
+        </style>
     </ul>
   )
 }

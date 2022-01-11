@@ -22,6 +22,14 @@ export default function DrinkCard({ drink }) {
                     <a className="button">View</a>
                 </Link>
             </div>
+
+            <style jsx>{`
+                .card {
+                    display: flex;
+                    flex-direction: column;
+                    background: wheat;
+                }
+            `}</style>
         </li>
     )
 }
