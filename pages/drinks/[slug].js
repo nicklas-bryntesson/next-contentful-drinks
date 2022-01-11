@@ -1,10 +1,11 @@
 import { createClient } from 'contentful'
 import Image from 'next/image'
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 
 // Create a client as a top level variable
 const client = createClient({
-    space: process.env.CONTENTFUL_SPACE_ID,
-    accessToken: process.env.CONTENTFUL_ACCESS_KEY,
+    space: process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID,
+    accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_KEY,
 })
 
 export const getStaticPaths = async () => {
@@ -34,7 +35,6 @@ export async function getStaticProps({ params }) {
     return {
         props: { drink: res.items[0] }
     }
-
 }
 
 export default function RecipeDetails( { drink } ) {
@@ -44,7 +44,10 @@ export default function RecipeDetails( { drink } ) {
     const { featuredImage, title, ingredients, method } = drink.fields
     
     return (
-    <div className='content'>
+   console.log(drink),
+
+   <div className='content'>
+
         <section className='banner'>
                 <figure>
                 <Image
@@ -55,8 +58,23 @@ export default function RecipeDetails( { drink } ) {
             </figure>
             <h2>{ title }</h2>
         </section>
-        <div className=''>
-            Stuff
+
+        <div className='info'>
+
+            <div className='ingredients'>
+                <h3>Ingredients</h3>
+                <ul>
+                    { ingredients.map( ingredient => (
+                        <li key={ ingredient }>{ ingredient }</li>
+                    )) }
+                </ul>
+            </div>
+            
+            <div className='method'>
+                <h3>Method</h3>
+                { documentToReactComponents(method) }
+            </div>
+
         </div>
     </div>    
     )
