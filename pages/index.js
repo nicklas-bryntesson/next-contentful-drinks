@@ -18,7 +18,6 @@ export async function getStaticProps() {
 }
 
 export default function Recipes({ drinks }) {
-  console.log(drinks)
 
   return (
     <ul className="drinks-list">

@@ -1,4 +1,6 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Drinks 🍹
+
+A Next.js & Contentful project.
 
 ## Getting Started
 
@@ -14,21 +16,41 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+I will host this thing on Vercel and update this file with links with url to demo site.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
-## Learn More
+## Roadmap
 
-To learn more about Next.js, take a look at the following resources:
+These are the steps ahead in this project
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Sprint 1 - Show drink recepies
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+MVP, show drinks recipes, archive page and single views.
+Build a content model in Contentful and fetch drinks to our App.
 
-## Deploy on Vercel
+### Sprint 2 - Sort drinks by type & ingredients.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Create input to sort our drinks by type (Long drinks cocktails etc..)
+How do we do this with static site generation, do we pre build every possible combination? 
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### Sprint 3 - Login
+
+Create user login and authentication with Firebase.
+
+### Sprint 4 - Give user capability to like Drinks
+
+How do i give the user the capability to like a drink and sort drinks by likes and save this to firebase.
+
+### Sprint 5 - Create User page
+
+ Create a method for a user to add basic information, and create a list of their spirits wich we can use to sort Drinks with later.
+
+### Sprint 6 - Sort drinks by user ingredients
+
+Give user capabilities to show drinks that match their inventory of spirits.
+Here i think i need to use 'getServerSideProps' since i don't see how this is gonna play well with SSG.
+Miught look into if this is a use case for Axios aswell.
+
+### Sprint 7 - Mix cocktails
+
+I think i earned myself atleast a whiskey sour by now? 🥃

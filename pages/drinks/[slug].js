@@ -1,4 +1,5 @@
 import { createClient } from 'contentful'
+import Image from 'next/image'
 
 // Create a client as a top level variable
 const client = createClient({
@@ -37,10 +38,26 @@ export async function getStaticProps({ params }) {
 }
 
 export default function RecipeDetails( { drink } ) {
+
     console.log(drink)
+
+    const { featuredImage, title, ingredients, method } = drink.fields
+    
     return (
-      <div>
-        Drink recipe details
-      </div>
+    <div className='content'>
+        <section className='banner'>
+                <figure>
+                <Image
+                    src={ 'https:' + featuredImage.fields.file.url } 
+                    width={ featuredImage.fields.file.details.image.width }
+                    height={ featuredImage.fields.file.details.image.height }
+                />
+            </figure>
+            <h2>{ title }</h2>
+        </section>
+        <div className=''>
+            Stuff
+        </div>
+    </div>    
     )
   }

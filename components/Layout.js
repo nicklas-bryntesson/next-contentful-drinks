@@ -11,9 +11,9 @@ export default function Layout({ children }) {
         </Link>
       </header>
 
-      <div className="page-content">
+      <main className="page-content">
         { children }
-      </div>
+      </main>
 
       <footer>
         <p>Developed with Next.js and Contentful by Nicklas Bryntesson</p>
