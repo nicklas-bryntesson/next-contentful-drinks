@@ -13,6 +13,7 @@ These are the steps ahead in this project
 
 MVP, show drinks recipes, archive page and single views.
 Build a content model in Contentful and fetch drinks to our App.
+Set up darkmode with custom properties that respond to browser user settings.
 
 ### Sprint 2 - Sort drinks by type & ingredients.
 
