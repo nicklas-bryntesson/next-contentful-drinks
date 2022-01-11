@@ -6,19 +6,38 @@ const client = createClient({
     accessToken: process.env.CONTENTFUL_ACCESS_KEY,
 })
 
-
-const getStaticPaths = async () => {
+export const getStaticPaths = async () => {
 
     const res = await client.getEntries({
         content_type: 'drinks',
     })
-    
+
+    const paths = res.items.map(item => {
+        return {
+            params: { slug: item.fields.slug },
+        }
+    })
+
     return {
-        paths: []
+        paths,
+        fallback: false
     }
 }
 
-export default function RecipeDetails() {
+export async function getStaticProps({ params }) {
+    const res = await client.getEntries({
+        content_type: 'drinks',
+        'fields.slug': params.slug,
+    })
+
+    return {
+        props: { drink: res.items[0] }
+    }
+
+}
+
+export default function RecipeDetails( { drink } ) {
+    console.log(drink)
     return (
       <div>
         Drink recipe details
