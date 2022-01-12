@@ -64,11 +64,17 @@ export default function RecipeDetails( { drink } ) {
                 <section className='banner'>
                     <figure className='feat-image'>
                         <Image
-                            className='test'
-                            src={ 'https:' + featuredImage.fields.file.url } 
-                            width={ featuredImage.fields.file.details.image.width }
-                            height={ featuredImage.fields.file.details.image.height }
+                            className='full-width-image'
+                            src={ 'https:' + featuredImage.fields.file.url }
+                            priority
+                            //width={ featuredImage.fields.file.details.image.width }
+                            //height={ featuredImage.fields.file.details.image.height }
                             alt={ featuredImage.fields.description }
+                            blurDataURL="data:..."
+                            placeholder="blur"
+                            layout="fill"
+                            objectFit="cover"
+                            quality={100}
                         />
                     </figure>
                     <h2>{ title }</h2>
@@ -110,19 +116,6 @@ export default function RecipeDetails( { drink } ) {
                         max-width: 80ch;
                     }
 
-                    .test {
-                        width: 100%;
-                        height: auto;
-                        object-fit: cover;
-                    }
-
-                    .feat-image {
-                        position: relative;
-                        max-height: 300px;
-                        margin: 0;
-                        overflow: hidden;
-                    }
-
                     .feat-image:before {
                         content: '';
                         inset: 0;
@@ -131,12 +124,6 @@ export default function RecipeDetails( { drink } ) {
                         z-index: 1;
                     }
                     
-                    .feat-image img {
-                        width: 100%;
-                        height: auto;
-                        object-fit: cover;
-                    }
-
                     .info {
                         width: 100%;
                         max-width: 80ch;
