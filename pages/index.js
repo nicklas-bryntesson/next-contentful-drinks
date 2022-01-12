@@ -19,30 +19,39 @@ export async function getStaticProps() {
 export default function Recipes({ drinks }) {
 
   return (
-    <ul className="drinks-list">
-      { drinks.map( drink => (
-        <DrinkCard key={ drink.sys.id} drink={ drink } />
-      ))}
-        <style jsx>
-          {`
-            .drinks-list {
-              display: grid;
-              grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
-              grid-gap: 1.75em;
-              list-style: none;
-              padding: 0;
-              margin: 1.75em;
-            }
+    <div className='wrapper'>
+      <h2 className='page-title'>Cocktails & Longdrinks</h2>
+      <ul className="drinks-list">
+        { drinks.map( drink => (
+          <DrinkCard key={ drink.sys.id} drink={ drink } />
+        ))}
+      </ul>
+      
+      <style jsx>{`
+        .page-title {
+          max-width: 80ch;
+          margin: 0 auto;
+          text-align: center;
+          margin-bottom: 2rem;
+        }
 
-            /* Fix this with container queries + fallback */
-            @media (min-width: 1080px) {
-              .drinks-list {
-                max-width: 80vw;
-                margin: 0 auto;
-              }
+          .drinks-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+            grid-gap: 1.75em;
+            list-style: none;
+            padding: 0;
+            margin: 1.75em;
+          }
+
+          /* Fix this with container queries + fallback */
+          @media (min-width: 1080px) {
+            .drinks-list {
+              max-width: 80vw;
+              margin: 0 auto;
             }
-          `}
-        </style>
-    </ul>
+          }
+      `}</style>
+    </div>
   )
 }

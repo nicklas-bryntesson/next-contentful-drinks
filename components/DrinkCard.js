@@ -37,14 +37,14 @@ export default function DrinkCard({ drink }) {
                 .card figure {
                     margin: 0;
                     padding: 0;
-                    margin-bottom: 1rem;
                     aspect-ratio: 1/1;
+                    background-color: beige;
                     overflow: hidden;
                 }
 
                 .card figure img {
                     width: 100%;
-                    height: auto;
+                    height: 100%;
                     aspect-ratio: 1;
                     object-fit: cover;
                 }
@@ -53,17 +53,26 @@ export default function DrinkCard({ drink }) {
                     padding: 1rem;
                 }
 
+                .card-content h3 {
+                    margin-bottom: .75rem;
+                }
+
                 .card-content .cta-button {
                     display: flex;
                     justify-content: center;
                     align-items: center;
-                    padding: 1em;
-                    border: .125em solid royalblue;
+                    padding: .5em 1em;
+                    border: .125em solid var(--main-text-color);
                     border-radius: .25em;
-                    color: royalblue;
+                    color: var(--main-text-color);
                     font-weight: bold;
                     text-decoration: none;
                     transition: all .2s ease-in-out;
+                }
+
+                .card-content .cta-button:hover {
+                    background: var(--main-text-color);
+                    color: var(--card-background);
                 }
 
             `}</style>

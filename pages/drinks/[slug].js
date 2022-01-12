@@ -58,85 +58,110 @@ export default function RecipeDetails( { drink } ) {
     const { featuredImage, title, ingredients, method } = drink.fields
     
     return (
-   console.log(drink),
 
-   <div className='content'>
+        <div className='content'>
 
-        <section className='banner'>
-            <figure className='feat-image'>
-                <Image
-                    src={ 'https:' + featuredImage.fields.file.url } 
-                    width={ featuredImage.fields.file.details.image.width }
-                    height={ featuredImage.fields.file.details.image.height }
-                    alt={ featuredImage.fields.description }
-                />
-            </figure>
-            <h2>{ title }</h2>
-        </section>
+                <section className='banner'>
+                    <figure className='feat-image'>
+                        <Image
+                            className='test'
+                            src={ 'https:' + featuredImage.fields.file.url } 
+                            width={ featuredImage.fields.file.details.image.width }
+                            height={ featuredImage.fields.file.details.image.height }
+                            alt={ featuredImage.fields.description }
+                        />
+                    </figure>
+                    <h2>{ title }</h2>
+                </section>
 
-        <div className='info'>
+                <div className='info'>
 
-            <div className='ingredients'>
-                <h3>Ingredients</h3>
-                <ul>
-                    { ingredients.map( ingredient => (
-                        <li key={ ingredient }>{ ingredient }</li>
-                    )) }
-                </ul>
-            </div>
-            
-            <div className='method'>
-                <h3>Method</h3>
-                { documentToReactComponents( method ) }
-            </div>
+                    <div className='ingredients'>
+                        <h3>Ingredients</h3>
+                        <ul>
+                            { ingredients.map( ingredient => (
+                                <li key={ ingredient }>{ ingredient }</li>
+                            )) }
+                        </ul>
+                    </div>
+                    
+                    <div className='method'>
+                        <h3>Method</h3>
+                        { documentToReactComponents( method ) }
+                    </div>
+                    <hr />
+                    <div className='legend'>
+                        <h3>Legend</h3>
+                    </div>
 
-        </div>
+                </div>
 
-        <style jsx>{`
-            .banner {
-                margin-top: -2em;
-                width: 100%;
-                overflow: hidden;
-                background: white;
-            }
+                <style jsx>{`
+                    .banner {
+                        margin-top: -2em;
+                        width: 100%;
+                        overflow: hidden;
+                        background: white;
+                    }
 
-            .banner h2 {
-                margin: 1rem;
-                width: 100%;
-                max-width: 80ch;
-            }
+                    .banner h2 {
+                        margin: 1rem;
+                        width: 100%;
+                        max-width: 80ch;
+                    }
 
+                    .test {
+                        width: 100%;
+                        height: auto;
+                        object-fit: cover;
+                    }
 
+                    .feat-image {
+                        position: relative;
+                        max-height: 300px;
+                        margin: 0;
+                        overflow: hidden;
+                    }
 
-            .feat-image {
-                position: relative;
-                max-height: 300px;
-                margin: 0;
-                overflow: hidden;
-            }
+                    .feat-image:before {
+                        content: '';
+                        inset: 0;
+                        position: absolute;
+                        background: rgba(0,0,0,0.35);
+                        z-index: 1;
+                    }
+                    
+                    .feat-image img {
+                        width: 100%;
+                        height: auto;
+                        object-fit: cover;
+                    }
 
-            .feat-image:before {
-                content: '';
-                inset: 0;
-                position: absolute;
-                background: rgba(0,0,0,0.35);
-                z-index: 1;
-            }
-            
-            .feat-image img {
-                width: 100%;
-                height: auto;
-                object-fit: cover;
-    
-            }
+                    .info {
+                        width: 100%;
+                        max-width: 80ch;
+                        margin: 0 auto;
+                        padding: 1em;
+                    }
 
-            .info {
-                width: 100%;
-                max-width: 80ch;
-                margin: 0 auto;
-                padding: 1em;
-            }
-        `}</style>
-    </div>    
+                    .info h3 {
+                        margin-top: .5em;
+                        margin-bottom: 1rem;
+                    }
+
+                    .info p {
+                        margin-bottom: 1rem;
+                    }
+
+                    .method p {
+                        margin-bottom: 1rem;
+                    }
+
+                    hr {
+                        margin-top: 1rem;
+                        margin-bottom: 1rem;
+                    }
+                `}</style>
+            </div>    
     )
   }
