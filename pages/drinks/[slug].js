@@ -63,11 +63,12 @@ export default function RecipeDetails( { drink } ) {
    <div className='content'>
 
         <section className='banner'>
-                <figure>
+            <figure className='feat-image'>
                 <Image
                     src={ 'https:' + featuredImage.fields.file.url } 
                     width={ featuredImage.fields.file.details.image.width }
                     height={ featuredImage.fields.file.details.image.height }
+                    alt={ featuredImage.fields.description }
                 />
             </figure>
             <h2>{ title }</h2>
@@ -92,10 +93,48 @@ export default function RecipeDetails( { drink } ) {
         </div>
 
         <style jsx>{`
+            .banner {
+                margin-top: -2em;
+                width: 100%;
+                overflow: hidden;
+                background: white;
+            }
+
+            .banner h2 {
+                margin: 1rem;
+                width: 100%;
+                max-width: 80ch;
+            }
+
+
+
+            .feat-image {
+                position: relative;
+                max-height: 300px;
+                margin: 0;
+                overflow: hidden;
+            }
+
+            .feat-image:before {
+                content: '';
+                inset: 0;
+                position: absolute;
+                background: rgba(0,0,0,0.35);
+                z-index: 1;
+            }
+            
+            .feat-image img {
+                width: 100%;
+                height: auto;
+                object-fit: cover;
+    
+            }
+
             .info {
                 width: 100%;
                 max-width: 80ch;
                 margin: 0 auto;
+                padding: 1em;
             }
         `}</style>
     </div>    

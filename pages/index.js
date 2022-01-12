@@ -21,7 +21,7 @@ export default function Recipes({ drinks }) {
   return (
     <ul className="drinks-list">
       { drinks.map( drink => (
-        <DrinkCard key={ drink.sys.id} drink={drink} />
+        <DrinkCard key={ drink.sys.id} drink={ drink } />
       ))}
         <style jsx>
           {`
