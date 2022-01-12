@@ -86,10 +86,18 @@ export default function RecipeDetails( { drink } ) {
             
             <div className='method'>
                 <h3>Method</h3>
-                { documentToReactComponents(method) }
+                { documentToReactComponents( method ) }
             </div>
 
         </div>
+
+        <style jsx>{`
+            .info {
+                width: 100%;
+                max-width: 80ch;
+                margin: 0 auto;
+            }
+        `}</style>
     </div>    
     )
   }

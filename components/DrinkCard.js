@@ -16,19 +16,56 @@ export default function DrinkCard({ drink }) {
             </figure>
             <div className="card-content">
                 <h3>{ title }</h3>
-            </div>
-            <div className="actions">
+                <div className="actions">
                 <Link href="/drinks/[slug]" as={`/drinks/${slug}`}>
-                    <a className="button">View</a>
+                    <a className="cta-button">View</a>
                 </Link>
             </div>
+            </div>
+
 
             <style jsx>{`
                 .card {
                     display: flex;
                     flex-direction: column;
-                    background: wheat;
+                    background: var(--card-background);
+                    overflow: hidden;
+                    border-radius: .25em;
+                    box-shadow: var(--shadow-elevation-medium);
                 }
+
+                .card figure {
+                    margin: 0;
+                    padding: 0;
+                    margin-bottom: 1rem;
+                    aspect-ratio: 1/1;
+                    overflow: hidden;
+                }
+
+                .card figure img {
+                    width: 100%;
+                    height: auto;
+                    aspect-ratio: 1;
+                    object-fit: cover;
+                }
+
+                .card-content {
+                    padding: 1rem;
+                }
+
+                .card-content .cta-button {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    padding: 1em;
+                    border: .125em solid royalblue;
+                    border-radius: .25em;
+                    color: royalblue;
+                    font-weight: bold;
+                    text-decoration: none;
+                    transition: all .2s ease-in-out;
+                }
+
             `}</style>
         </li>
     )

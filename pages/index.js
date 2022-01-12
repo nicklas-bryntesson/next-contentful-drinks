@@ -27,11 +27,19 @@ export default function Recipes({ drinks }) {
           {`
             .drinks-list {
               display: grid;
-              grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-              grid-gap: 1rem;
+              grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+              grid-gap: 1.75em;
               list-style: none;
               padding: 0;
-              margin: 1rem;
+              margin: 1.75em;
+            }
+
+            /* Fix this with container queries + fallback */
+            @media (min-width: 1080px) {
+              .drinks-list {
+                max-width: 80vw;
+                margin: 0 auto;
+              }
             }
           `}
         </style>
