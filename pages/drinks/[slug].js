@@ -2,6 +2,17 @@ import { createClient } from 'contentful'
 import Image from 'next/image'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import Skeleton from '../../components/Skeleton'
+import styled from 'styled-components';
+
+
+const TestDiv = styled.div`
+    background-color: slateblue;
+    color: white;
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+`;
 
 
 // Create a client as a top level variable
@@ -99,6 +110,8 @@ export default function RecipeDetails( { drink } ) {
                     <div className='legend'>
                         <h3>Legend</h3>
                     </div>
+
+                    <TestDiv>This is my styled component test div</TestDiv>
 
                 </div>
 
