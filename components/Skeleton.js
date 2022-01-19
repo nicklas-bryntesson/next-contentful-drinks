@@ -14,7 +14,7 @@ export default function Skeleton() {
                 }
 
                 .skeleton > div {
-                    background: #f0f0f0;
+                    background: var(--surface4);
                     padding: 1rem;
                     margin: 1rem;
                     border-radius: 0.5rem;

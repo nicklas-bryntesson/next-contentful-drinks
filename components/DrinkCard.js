@@ -28,10 +28,17 @@ export default function DrinkCard({ drink }) {
                 .card {
                     display: flex;
                     flex-direction: column;
-                    background: var(--card-background);
+                    background: var(--surface2);
                     overflow: hidden;
                     border-radius: .25em;
-                    box-shadow: var(--shadow-elevation-medium);
+                    box-shadow:
+                    0 2.8px 2.2px hsl(var(--surface-shadow) / calc(var(--shadow-strength) + .03)),
+                    0 6.7px 5.3px hsl(var(--surface-shadow) / calc(var(--shadow-strength) + .01)),
+                    0 12.5px 10px hsl(var(--surface-shadow) / calc(var(--shadow-strength) + .02)),
+                    0 22.3px 17.9px hsl(var(--surface-shadow) / calc(var(--shadow-strength) + .02)),
+                    0 41.8px 33.4px hsl(var(--surface-shadow) / calc(var(--shadow-strength) + .03)),
+                    0 100px 80px hsl(var(--surface-shadow) / var(--shadow-strength))
+                  ;
                 }
 
                 .card figure {
@@ -62,17 +69,17 @@ export default function DrinkCard({ drink }) {
                     justify-content: center;
                     align-items: center;
                     padding: .5em 1em;
-                    border: .125em solid var(--main-text-color);
+                    border: .125em solid var(--text1);
                     border-radius: .25em;
-                    color: var(--main-text-color);
+                    color: var(--text1);
                     font-weight: bold;
                     text-decoration: none;
                     transition: all .2s ease-in-out;
                 }
 
                 .card-content .cta-button:hover {
-                    background: var(--main-text-color);
-                    color: var(--card-background);
+                    background: var(--text1);
+                    color: var(--surface2);
                 }
 
             `}</style>

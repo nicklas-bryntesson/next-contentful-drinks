@@ -19,7 +19,7 @@ export default function Header() {
                 .site-header {
                     display: flex;
                     padding: 1rem;
-                    background-color: var(--header-bg-color);
+                    background-color: var(--surface3);
                 }
 
                 .branding {

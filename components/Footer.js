@@ -7,7 +7,7 @@ export default function Footer() {
 
             .site-footer {
                 padding: 1rem;
-                background-color: var(--footer-bg-color);
+                background-color: var(--surface3);
                 text-align: center;
                 font-size: 0.8rem;
             }
