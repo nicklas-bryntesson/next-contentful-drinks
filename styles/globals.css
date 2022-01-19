@@ -4,13 +4,11 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  background-color: var(--main-bg-color);
 }
 
 a {
   color: inherit;
   text-decoration: none;
-  color: royalblue;
 }
 
 * {
@@ -28,7 +26,6 @@ a {
   position: relative;
   width: 100%;
   height: 40vh;
-  background: #eee;
 }
 
 .full-width-image {
