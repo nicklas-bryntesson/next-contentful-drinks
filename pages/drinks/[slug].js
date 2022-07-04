@@ -5,16 +5,6 @@ import Skeleton from '../../components/Skeleton'
 import styled from 'styled-components';
 
 
-const TestDiv = styled.div`
-    background-color: slateblue;
-    color: white;
-    padding: 1rem;
-    margin: 1rem;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
-`;
-
-
 // Create a client as a top level variable
 const client = createClient({
     space: process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID,
@@ -111,7 +101,7 @@ export default function RecipeDetails( { drink } ) {
                         <h3>Legend</h3>
                     </div>
 
-                    <TestDiv>This is my styled component test div</TestDiv>
+                
 
                 </div>
 
